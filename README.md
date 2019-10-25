@@ -290,7 +290,7 @@ namespace NetCore3WebAPI.Controllers
                 var result = repo.List(w =>
                             (vm.id == 0 || w.id == vm.id)
                             &&
-                            (vm.name == null || w.name.ToUpper().Equals(w.name.ToUpper())));
+                            (vm.name == null || w.name.ToUpper().Equals(vm.name.ToUpper())));
                 return Ok(result);
                 //using (var c = new MySqlConnection(con.MySQL))
                 //{
