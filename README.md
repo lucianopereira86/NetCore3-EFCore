@@ -25,7 +25,7 @@ These are your current packages:
 
 ![print03](/docs/print03.JPG)
 
-You don't need _Dapper_ anymore, so download the _Entity Framework Core_ package for MySQL through Nuget:
+You don't need _Dapper_ anymore, so download the _Entity Framework Core_ package for MySQL, called _Pomelo.EntityFrameworkCore.MySql_, by Nuget:
 
 ![print04](/docs/print04.JPG)
 
