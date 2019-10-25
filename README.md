@@ -234,7 +234,7 @@ namespace NetCore3WebAPI.Infra.Repository
 
 ```
 
-Inside the _Startup's ConfigureServices_ method, create a service for the _IUserRepository_ and inject the MySQL connection string into _DBContext_ (don't forget to import the _EntityFrameworkCore_ library):
+Inside the _Startup's ConfigureServices_ method, create a service for the _IUserRepository_ and inject the MySQL connection string (from the _appsettings.json_) into _DBContext_ (don't forget to import the _EntityFrameworkCore_ library):
 
 ```csharp
 (...)
