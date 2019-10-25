@@ -21,10 +21,6 @@ You will need a .Net Core 3 project connected with a MySQL database, so follow t
 
 ![print01](/docs/print01.JPG)
 
-Update the connection string within the _appsettings.json_:
-
-![print02](/docs/print02.JPG)
-
 These are your current packages:
 
 ![print03](/docs/print03.JPG)
