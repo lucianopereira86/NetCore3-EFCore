@@ -8,7 +8,6 @@ Connecting a .Net Core 3 web API with a MySQL database by using Entity Framework
 
 - [.Net Core 3](https://docs.microsoft.com/pt-br/dotnet/core/whats-new/dotnet-core-3-0)
 - [MySQL](https://www.mysql.com/)
-- [MySQL Workbench](https://www.mysql.com/products/workbench/)
 - [EFCore](https://www.entityframeworktutorial.net/efcore/entity-framework-core.aspx)
 
 ## Topics
@@ -18,7 +17,7 @@ Connecting a .Net Core 3 web API with a MySQL database by using Entity Framework
 
 ### Installation
 
-You will need a .Net Core 3 project connected with a MySQL database, so follow the instructions from this [repository](https://github.com/lucianopereira86/NetCore3-MySQL) or from this [article](https://dev.to/lucianopereira86/net-core-web-api-part-2-mysql-3bje), create your database, download the project and open it with Visual Studio 2019.
+You will need a .Net Core 3 project connected with a MySQL database, so follow the instructions from this [repository](https://github.com/lucianopereira86/NetCore3-MySQL) or from this [article](https://dev.to/lucianopereira86/net-core-web-api-part-2-mysql-3bje).
 
 ![print01](/docs/print01.JPG)
 
