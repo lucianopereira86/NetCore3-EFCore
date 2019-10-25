@@ -105,6 +105,7 @@ namespace NetCore3WebAPI.Infra.Repository
 {
     public class DBContext: DbContext
     {
+        public DbSet<User> User { get; set; }
         public DBContext(DbContextOptions<DBContext> options) : base(options)
         {
 
@@ -128,7 +129,7 @@ namespace NetCore3WebAPI.Infra.Repository
 }
 ```
 
-To build the repository, it will be necessary a super class containing the generic methods shared by the _DBSet_ object.
+To build the repository, it will be necessary a super class containing the generic methods used by the _DBSet_ object.
 Inside the _Infra/Interface_ folder, create two interfaces:
 
 ```csharp

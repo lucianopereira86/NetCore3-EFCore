@@ -5,6 +5,7 @@ namespace NetCore3WebAPI.Infra.Repository
 {
     public class DBContext: DbContext
     {
+        public DbSet<User> User { get; set; }
         public DBContext(DbContextOptions<DBContext> options) : base(options)
         {
 
