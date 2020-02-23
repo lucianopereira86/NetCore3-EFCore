@@ -1,8 +1,8 @@
-﻿namespace NetCore3WebAPI.Models
+﻿namespace WebAPI.Models
 {
     public class User
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public string name { get; set; }
     }
 }

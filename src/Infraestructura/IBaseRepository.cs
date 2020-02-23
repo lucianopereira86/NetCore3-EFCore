@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace NetCore3WebAPI.Infra.Interface
+namespace Infraestructura
 {
     public interface IBaseRepository<T> where T : class
     {

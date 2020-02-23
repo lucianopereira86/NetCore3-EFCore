@@ -1,36 +1,35 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NetCore3WebAPI.Infra.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace NetCore3WebAPI.Infra.Repository
+namespace Infraestructura.Impl
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
-        private DbSet<T> entity_;
-        protected DBContext context;
+        private readonly DbSet<T> entity;
+        protected CablemodemContext context;
 
-        public BaseRepository(DBContext context)
+        public BaseRepository(CablemodemContext context)
         {
             this.context = context;
-            entity_ = context.Set<T>();
+            this.entity = context.Set<T>();
         }
 
         public virtual IEnumerable<T> List(Expression<Func<T, bool>> expression)
         {
-            return entity_.Where(expression).ToList();
+            return entity.Where(expression).ToList();
         }
 
         public bool Any(Expression<Func<T, bool>> expression)
         {
-            return entity_.Any(expression);
+            return entity.Any(expression);
         }
 
         public T Save(T entity)
         {
-            entity_.Add(entity);
+            this.entity.Add(entity);
             context.SaveChanges();
 
             return entity;
@@ -38,14 +37,14 @@ namespace NetCore3WebAPI.Infra.Repository
 
         public T Update(T entity)
         {
-            entity_.Update(entity);
+            this.entity.Update(entity);
             context.SaveChanges();
             return entity;
         }
 
         public void Delete(T entity)
         {
-            entity_.Remove(entity);
+            this.entity.Remove(entity);
             context.SaveChanges();
         }
     }

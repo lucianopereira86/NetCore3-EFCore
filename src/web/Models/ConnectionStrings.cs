@@ -1,4 +1,4 @@
-﻿namespace NetCore3WebAPI.Models
+﻿namespace WebAPI.Models
 {
     public class ConnectionStrings
     {
