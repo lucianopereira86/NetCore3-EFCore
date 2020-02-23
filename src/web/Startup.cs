@@ -1,22 +1,19 @@
-using System;
-using System.IO;
+using Infraestructura;
+using Infraestructura.Impl;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
-using NetCore3WebAPI.Infra.Repository;
-using NetCore3WebAPI.Models;
-using Microsoft.EntityFrameworkCore;
-using NetCore3WebAPI.Infra.Interface;
+using WebAPI.Models;
 
-namespace NetCore3WebAPI
+namespace WebAPI
 {
     public class Startup
     {
         public IConfigurationRoot Configuration { get; }
-        public Startup(Microsoft.Extensions.Hosting.IHostingEnvironment env)
+        public Startup(IWebHostEnvironment env)
         {
             var appsettings = new ConfigurationBuilder()
                 .SetBasePath(env.ContentRootPath)
@@ -35,16 +32,8 @@ namespace NetCore3WebAPI
 
             services.AddControllers();
             services.AddMvc();
-
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = ".Net Core 3 Web API", Version = "v1" });
-                var filePath = Path.Combine(AppContext.BaseDirectory, "NetCore3WebAPI.xml");
-                c.IncludeXmlComments(filePath);
-            });
-
             services.AddScoped<IUserRepository, UserRepository>();
-            services.AddDbContext<DBContext>(o => o.UseMySql(Configuration.GetConnectionString("MySQL")));
+            services.AddDbContext<CablemodemContext>(o => o.UseInMemoryDatabase(Configuration.GetConnectionString("InMemory")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,11 +49,6 @@ namespace NetCore3WebAPI
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-            });
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", ".Net Core 3 Web API V1");
             });
         }
     }

@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace NetCore3WebAPI.Controllers
+namespace WebAPI.Controllers
 {
     [Route("api/Test")]
     [ApiController]
