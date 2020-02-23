@@ -24,10 +24,7 @@ namespace WebAPI.Controllers
         {
             return await Task.Run(() =>
             {
-                var result = userRepository.List(_user =>
-                            (user.Id == 0 || _user.Id == user.Id)
-                            &&
-                            (user.name == null || _user.Nombre.ToUpper().Equals(_user.Nombre.ToUpper())));
+                var result = userRepository.List(_user => (user.Id == 0 || _user.Id == user.Id) && (user.name == null || _user.Nombre.ToUpper().Equals(_user.Nombre.ToUpper())));
                 return Ok(result);
             });
         }
