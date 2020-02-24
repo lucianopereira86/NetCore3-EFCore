@@ -17,7 +17,7 @@ namespace Infraestructura.Impl
             this.entity = context.Set<T>();
         }
 
-        public virtual IEnumerable<T> List(Expression<Func<T, bool>> expression)
+        public virtual IEnumerable<T> Search(Expression<Func<T, bool>> expression)
         {
             return entity.Where(expression).ToList();
         }
